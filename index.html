@@ -1,6 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"> 
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11313178953"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-11313178953');
+</script>
+
+<script>
+  function handleCallClick() {
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11313178953/call_button_click',         
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': function() {
+          console.log('Call click conversion recorded');
+        }
+    });
+  }
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('[data-testid="nav-phone"]') || e.target.closest('a[href^="tel:"]')) {
+      handleCallClick();
+    }
+  });
+</script>
     <meta charset="utf-8""")/>>
     <meta name="viewport" content="width=device-width,initial-scale=1""")/>>
     <meta name="theme-color" content="#000000""")/>>
